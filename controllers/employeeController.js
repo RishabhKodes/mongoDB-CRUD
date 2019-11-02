@@ -7,7 +7,7 @@ var Employee = require('../models/employee.model');
 
 router.get('/', (req, res) => {
     res.render('employee/addOrEdit', {
-        viewTitle: 'Insert Employee'
+        viewTitle: 'Insert Voter'
     });
 });
 
@@ -23,7 +23,7 @@ router.get('/list', (req, res) => {
         if (!err) {
             res.render('employee/list', { list: docs });
         } else {
-            console.log('Error in retrieving employee list: ' + err);
+            console.log('Error in retrieving voters list: ' + err);
         }
     });
 });
@@ -33,7 +33,7 @@ router.get('/delete/:id', (req, res) => {
         if (!err) {
             res.redirect('/employee/list');
         } else {
-            console.log('Error in deleting employee: ' + err);
+            console.log('Error in deleting voter: ' + err);
         }
     });
 });
@@ -50,7 +50,7 @@ function insertRecord(req, res) {
             if (err.name == 'ValidationError') {
                 handleValidationError(err, req.body);
                 res.render('employee/addOrEdit', {
-                    viewTitle: 'Insert Employee',
+                    viewTitle: 'Insert Voter',
                     employee: req.body
                 });
             } else
