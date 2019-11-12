@@ -38,7 +38,7 @@ router.get('/delete/:id', (req, res) => {
     });
 });
 
-function insertRecord(req, res) {
+function insertRecord(req, res){
     var employee = new Employee();
     employee.fullName = req.body.fullName;
     employee.email = req.body.email;
