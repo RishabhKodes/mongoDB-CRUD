@@ -9,6 +9,7 @@ const employeeController = require('./controllers/employeeController');
 
 var app = express();
 
+//middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/views')));
@@ -22,6 +23,7 @@ app.listen(3000, () => {
     console.log('Express server started at port: 3000.');
 });
 
+//directing to homepage
 app.get('/', function(req,res){
     res.render('index')
 })
